@@ -25,6 +25,9 @@ double precio_final;
      */
     public Peso_otros_planetas() {
         initComponents();
+         
+this.setLocationRelativeTo(null); //para que el frm salge centralizado
+
     }
 
     /**
@@ -103,25 +106,30 @@ double precio_final;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_tu_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_consultar))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txt_tu_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_consultar)
+                        .addGap(3, 3, 3)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cbo_planetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         pack();
@@ -175,10 +183,14 @@ planetas=cbo_planetas.getSelectedIndex();
         }*/
        
         switch(planetas){
-        case 0 : precio_final=tupeso*Mercurio; txt_salida.setText("Tu peso en MERCURIO es: "+precio_final+"KG"); break;
-        case 1 : precio_final=tupeso*Venus; txt_salida.setText("Tu peso en VENUS es: "+precio_final+"KG"); break;
-        case 2 : precio_final=tupeso; txt_salida.setText("Tu peso en la TIERRA es: "+precio_final+"KG");break;
-        case 3 : precio_final=tupeso*Marte; txt_salida.setText("Tu peso en la Marte es: "+precio_final+"KG");break;
+        case 0 : precio_final=tupeso*Mercurio; txt_salida.setText("Tu peso en MERCURIO es: "+Math.round(precio_final*100.00)/100.0000+"KG"); break;
+        case 1 : precio_final=tupeso*Venus; txt_salida.setText("Tu peso en VENUS es: "+Math.round(precio_final*100.00)/100.0000+"KG"); break;
+        case 2 : precio_final=tupeso; txt_salida.setText("Tu peso en la TIERRA es: "+Math.round(precio_final*100.00)/100.0000+"KG");break;
+        case 3 : precio_final=tupeso*Marte; txt_salida.setText("Tu peso en la Marte es: "+Math.round(precio_final*100.00)/100.0000+"KG");break;
+        case 4 : precio_final=tupeso*Jupiter; txt_salida.setText("Tu peso en la Jupiter es: "+Math.round(precio_final*100.00)/100.0000+"KG");break;
+        case 5 : precio_final=tupeso*Saturno; txt_salida.setText("Tu peso en la Saturno es: "+Math.round(precio_final*100.00)/100.0000+"KG");break;
+        case 6 : precio_final=tupeso*Urano; txt_salida.setText("Tu peso en la Urano es: "+Math.round(precio_final*100.00)/100.0000+"KG");break;
+        case 7 : precio_final=tupeso*Neptuno; txt_salida.setText("Tu peso en la Neptuno es: "+Math.round(precio_final*100.00)/100.0000+"KG");break;
         }
 
         // TODO add your handling code here:
